@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Sentiment Prediction</title>
+</head>
+<body>
+    <h2>Tweet Sentiment Predictor</h2>
+    
+    <form action="/predict" method="POST">
+        <label for="tweet">Enter Tweet:</label>
+        <input type="text" id="tweet" name="tweet" required>
+        <br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Prediction Result:</h3>
+        <p><strong>Tweet:</strong> {{ tweet }}</p>
+        <p><strong>Predicted Class:</strong> {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
